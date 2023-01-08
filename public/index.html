@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"
+      integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./Index01.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Welcome to selfie_App</h1>
+      <br />
+      <p>HELLO !</p>
+      <div><a href="/">ENTER</a> | <a href="All.html">LIST</a></div>
+      <br />
+
+      <label for="text">ENTER TEXT</label>
+      <input type="text" name="" id="text" />
+
+      <button id="submit">SUBMIT</button>
+
+      <div id="camera"></div>
+
+      <!-- -----------------! MAP -->
+      <div class="Map-Wrapper">
+        <h2>Your Current location</h2>
+        <div id="map"></div>
+        <div class="details">
+          <p>
+            latitude: <span id="lat"></span>°<br />
+            longitude:<span id="long"></span>°
+          </p>
+        </div>
+      </div>
+      <!-- ------------------! POSITION LATITIUDE, LONGITUDE -->
+    </div>
+
+    <script src="./Index01.js"></script>
+  </body>
+</html>

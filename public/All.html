@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Index01.css" />
+  </head>
+  <body>
+    <h1>Data selfie App</h1>
+    <br />
+    <div><a href="/">ENTER</a> | <a href="All.html">LIST</a></div>
+
+    <br />
+    <br />
+    <br />
+
+    <script>
+      async function getData() {
+        const response = await fetch("/api");
+        const data = await response.json();
+        console.log(data);
+
+        for (item of data) {
+          const root = document.createElement("p");
+          const mood = document.createElement("div");
+          const geo = document.createElement("div");
+          const time = document.createElement("div");
+          const image = document.createElement("img");
+          const but = document.createElement("button");
+
+          root.style.background = "#ffaaff";
+          root.style.width = "400px";
+          root.style.border = "1px solid black";
+          root.style.padding = "10px";
+
+          mood.textContent = `Text: ${item.text}`;
+          geo.textContent = `Latitude: ${item.latitude} ,Longitude: ${item.longitude}`;
+          time.textContent = `Time: ${item.timestamp}`;
+          image.src = item.image64;
+
+          root.append(mood, geo, time, image, but);
+          document.body.append(root);
+        }
+      }
+      getData();
+    </script>
+  </body>
+</html>
